@@ -1,11 +1,24 @@
 import React from 'react';
 
-const IconDisplay = ({ iconUrl }) => {
-    
+const IconDisplay = ({ iconUrl, productIdea }) => {
+    console.log(iconUrl);
+    console.log(productIdea);    
+
   return (
-    <div>
-      <label>Icon Recommendation:</label>
-      <img src={iconUrl} alt="Category Icon" />
+    <div className='icon-display'>
+        <div className='left'>
+          Icon Recommendation:
+        </div>
+      {/* <p>{iconUrl+"900x900/?"+productIdea}</p> */}
+      <div className='right'>
+        {
+        productIdea==""
+        ?
+        <p></p>
+        :
+        <img className='generated-icon' src={iconUrl+"200x200/?"+productIdea} alt="Category Icon" />
+        }
+      </div>
     </div>
   );
 };
